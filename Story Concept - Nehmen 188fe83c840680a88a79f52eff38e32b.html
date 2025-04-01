@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Story Concept - Nehmen</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="188fe83c-8406-80a8-8a79-f52eff38e32b" class="page serif"><header><img class="page-cover-image" src="chapter_1_banner-yellower.jpg" style="object-position:center 50.17%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🦋</span></div><h1 class="page-title">Story Concept - Nehmen</h1><p class="page-description"></p></header><div class="page-body"><p id="188fe83c-8406-81eb-a0ef-c7e5bd6f4e59" class=""><em>A narrative driven horror game which focuses on the themes of helplessness and cosmic horror.</em></p><figure id="188fe83c-8406-8143-9675-fb6da7be9181" class="link-to-page"><a href="https://www.notion.so/NEHMEN-Game-Design-Doc-188fe83c840681439675fb6da7be9181?pvs=21">NEHMEN Game Design Doc</a></figure><h1 id="188fe83c-8406-8105-96b5-e206544d2314" class=""><mark class="highlight-yellow"><mark class="highlight-default_background">Inspirations</mark></mark></h1><hr id="188fe83c-8406-81c0-aaed-e0d57909416d"/><figure id="188fe83c-8406-8198-93b3-d518c1e63058" class="link-to-page"><a href="https://www.notion.so/Art-Inspiration-188fe83c8406819893b3d518c1e63058?pvs=21">Art Inspiration</a></figure><ul id="188fe83c-8406-816a-bf9e-fe4a2ba56e8c" class="bulleted-list"><li style="list-style-type:disc">Persona 5 - Day/Night system, Pacing, Dialogue</li></ul><ul id="188fe83c-8406-8152-a34f-eadf3c9544bb" class="bulleted-list"><li style="list-style-type:disc">Analog Horror Videos - Tropes, Scary moments</li></ul><ul id="188fe83c-8406-818c-99a4-fe17ec6d2d7e" class="bulleted-list"><li style="list-style-type:disc">Uzumaki - Themes, Characters</li></ul><ul id="188fe83c-8406-811a-82d4-f8314c630b2d" class="bulleted-list"><li style="list-style-type:disc">Lovecraft - Themes, Scale</li></ul><ul id="188fe83c-8406-8105-ba01-db9140ea0ded" class="bulleted-list"><li style="list-style-type:disc">Florida History - Spanish Colonization, Lore</li></ul><ul id="188fe83c-8406-816c-8c63-fb2fdcf72c38" class="bulleted-list"><li style="list-style-type:disc">Attack on Titan - Worldbuilding, Characters</li></ul><ul id="198fe83c-8406-805c-94a8-c7fe7239e895" class="bulleted-list"><li style="list-style-type:disc">Breaking Bad - Theme implementation, Character Arc</li></ul><h1 id="188fe83c-8406-8158-851e-f0a3ee4f85e1" class=""><mark class="highlight-yellow">Setting</mark></h1><hr id="188fe83c-8406-8181-b573-caa2b627974f"/><p id="188fe83c-8406-81e5-b3c6-d50591028d3a" class="">The year 2005 at a remote university in the Florida Everglades called “Southern Seminole University”. The college was built on the burial site of a Spanish battle with Native Americans. It specializes in archeology.</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Spain (1548)</summary></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Florida Everglades (1550)</summary></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Southern Seminole University (2005)</summary><div class="indented"><p id="188fe83c-8406-8116-923a-c06a23493317" class=""><em>Located where the current day city, Everglades City, FL, is. SSU in 2005 is the main setting for the game.</em></p><h2 id="188fe83c-8406-817f-9280-f03d3d8be9f6" class=""><em>Student Center</em></h2><ul id="188fe83c-8406-8162-89b7-f5810ae7238f" class="bulleted-list"><li style="list-style-type:disc">Food court<ul id="188fe83c-8406-818a-a2ea-f73b4db64705" class="bulleted-list"><li style="list-style-type:circle">Joe’s</li></ul><ul id="188fe83c-8406-81c7-82b1-c8e977f157bb" class="bulleted-list"><li style="list-style-type:circle">Moon Bucks</li></ul><ul id="188fe83c-8406-81ce-8440-d6fc7f8ef98b" class="bulleted-list"><li style="list-style-type:circle">Dragon Express</li></ul><ul id="188fe83c-8406-816a-91fc-d196e93be132" class="bulleted-list"><li style="list-style-type:circle">Cow-fil-a</li></ul></li></ul><ul id="188fe83c-8406-8162-8353-c7d5477dd0fe" class="bulleted-list"><li style="list-style-type:disc">Auditorium<ul id="188fe83c-8406-818a-ab9a-d8bfb626445e" class="bulleted-list"><li style="list-style-type:circle">People sneak in to play movies on the projector at night</li></ul></li></ul><ul id="188fe83c-8406-81bb-b9b6-df21e5d2ef88" class="bulleted-list"><li style="list-style-type:disc">Ballroom</li></ul><ul id="188fe83c-8406-81ae-a9ff-c8fcf92cca7c" class="bulleted-list"><li style="list-style-type:disc">Lounge Seating</li></ul><ul id="188fe83c-8406-818a-93d9-f878733db878" class="bulleted-list"><li style="list-style-type:disc">Pharmacy</li></ul><h2 id="188fe83c-8406-81a8-8a9f-fcedad13523d" class=""><em>Echoille History Museum</em></h2><h2 id="188fe83c-8406-8132-83e3-dfb26558b4e6" class=""><em>Dorm A</em></h2><h2 id="188fe83c-8406-8110-adf6-df67ef4d3b6a" class=""><em>Dorm B</em></h2><h2 id="188fe83c-8406-8133-b46d-f2e42b66deae" class=""><em>Dorm C</em></h2><h2 id="188fe83c-8406-81db-a746-e7579e5dbca0" class=""><em>Dining Hall</em></h2><h2 id="188fe83c-8406-8191-a3f7-c3902a0a005c" class=""><em>Student Service Building</em></h2><h2 id="188fe83c-8406-814b-85ab-d4bfe5626f1f" class=""><em>Rec Center &amp; Field</em></h2><h2 id="188fe83c-8406-819d-a7af-c5479887541f" class=""><em>Central Courtyard</em></h2><h2 id="188fe83c-8406-8125-97ef-d36fb06fa582" class=""><em>Observatory</em></h2><h2 id="188fe83c-8406-818a-8642-e3e45e970f7b" class=""><em>Tropical Chicken</em></h2><h2 id="188fe83c-8406-816e-934c-ed19d3680c60" class=""><em>Archeology Center</em></h2><ul id="188fe83c-8406-817c-9f50-e808827da395" class="bulleted-list"><li style="list-style-type:disc">Rectangle building with mock dig site in courtyard</li></ul><ul id="188fe83c-8406-816b-a91a-ea8acc49f6cb" class="bulleted-list"><li style="list-style-type:disc">Courtyard used to be actual dig site</li></ul><h2 id="188fe83c-8406-819e-a1bb-d4072a4b57a8" class=""><em>Giant Parking Lot</em></h2><h2 id="188fe83c-8406-81f5-98e6-cb234ff8d579" class=""><em>Billy Echoille’s House</em></h2><h2 id="188fe83c-8406-8192-abcf-cd40b1354422" class=""><em>Library</em></h2><h2 id="188fe83c-8406-8175-8de4-fcaeeae6046f" class=""><em>Education Building</em></h2><h2 id="188fe83c-8406-81e7-be06-e796763b6ce0" class=""><em>Math &amp; Sciences Building</em></h2><h2 id="188fe83c-8406-8105-9b86-e813fd525025" class=""><em>Engineering Building</em></h2><h2 id="188fe83c-8406-8125-8604-f02b5a57f1a1" class=""><em>College of Arts</em></h2><h2 id="188fe83c-8406-8133-bbac-e5fc1974faec" class=""><em>College of Business</em></h2><h2 id="188fe83c-8406-81d2-a21d-d61b76a0beb3" class=""><em>Clinic</em></h2><h2 id="188fe83c-8406-8115-8a1b-cbbb2425b7aa" class=""><em>Community’s</em></h2><ul id="188fe83c-8406-8180-a43c-d601615810b4" class="bulleted-list"><li style="list-style-type:disc">grocery store based on Publix</li></ul><h2 id="188fe83c-8406-8105-a263-eee4470ec252" class=""><em>Bookstore</em></h2></div></details><h1 id="188fe83c-8406-8123-bbd0-c6de4b94f353" class=""><mark class="highlight-yellow">Characters</mark></h1><hr id="188fe83c-8406-8107-bccd-e34fa12ef4a6"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Nehmen</summary><div class="indented"><figure id="188fe83c-8406-81ae-8a16-f733f43697fb" class="link-to-page"><a href="https://www.notion.so/Nehmen-Concept-Board-188fe83c840681ae8a16f733f43697fb?pvs=21">Nehmen Concept Board</a></figure><p id="188fe83c-8406-8114-a161-d1668637c477" class="">Nehmen is the main antagonist and catalyst for the game. He exists as a 4 dimensional creature, traversing through different 3D planes as he moves towards dead people’s lingering souls like a moth towards a flame. </p><ul id="188fe83c-8406-81f2-859e-e9ee9da3fa15" class="bulleted-list"><li style="list-style-type:disc">Nehmen’s 4d body takes the shape of a humanoid angel, but since he can only be seen in 3d he is incomprehensible and abstract.</li></ul><ul id="188fe83c-8406-81bb-a84a-e42c0cda7bca" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default_background">The Angels that people think they saw throughout the Bible were just different parts of Nehmen drifting through their plane.</mark></li></ul><ul id="188fe83c-8406-81a4-bb78-f7fc117abc9e" class="bulleted-list"><li style="list-style-type:disc">Nehmen’s body is not physical, it exists on the same realm that souls do. This means that he can’t interact with physical things and he can only interact with souls.</li></ul><ul id="188fe83c-8406-8163-a203-e07f630c4ab1" class="bulleted-list"><li style="list-style-type:disc">When Nehmen passes through a person, he drags their soul along with him through different 3 dimensional planes. This causes a hellish eternity for any souls he takes. (Interdimensional eternal roller coaster) If you’re a human and you watch Nehmen take someone’s soul, it will appear as if they just dropped dead for no reason.</li></ul><ul id="188fe83c-8406-81ca-a023-e69f35acb2b8" class="bulleted-list"><li style="list-style-type:disc">Nehmen’s followers warp their ideas about him with their own Christian beliefs. They believe that he lives in heaven and when he takes someone’s soul, he is taking it to heaven with him.</li></ul><ul id="188fe83c-8406-8116-9f59-cc2534a72183" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">Nehmen is attracted to large clusters of souls. Usually after death, souls fade out, however because the cult killed themselves in a ritualistic way, their souls remain, leaving a giant cluster which Nehmen is attracted to after they are released from the construction site.</mark></li></ul><ul id="188fe83c-8406-812f-9414-f00f65d4a22b" class="bulleted-list"><li style="list-style-type:disc">By the souls of the Spaniards and Natives being trapped in one place, it’s creating a hot-spot to attract Nehmen. Thus risking the lives of the people on campus as he gets closer to them.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Ivan Pasture (Main Character)</summary><div class="indented"><p id="188fe83c-8406-81d6-9ab8-e5fdd4d0d994" class="">The main character of the game. He shows up to the school halfway <mark class="highlight-yellow_background">through the spring semester</mark>, meaning he still has time to figure out what’s going on before Nehmen’s influence overtakes him. (Taking<mark class="highlight-default_background"> stats, english comp, us gov, journalism) He begins the story believing that the world is hopeless and no matter what he does, he cannot change anything. </mark></p><ul id="188fe83c-8406-81ec-9513-cc4e99bf4a50" class="bulleted-list"><li style="list-style-type:disc">Ivan is 18 and White/Hispanic, is a very talented writer and photographer, listens to punk music and wears alt clothing.</li></ul><ul id="188fe83c-8406-814f-a696-e895ebbad260" class="bulleted-list"><li style="list-style-type:disc">Ivan begins the game as a person who believes everything is inevitable. Eventually, he develops stronger morals and journalistic integrity. </li></ul><ul id="188fe83c-8406-819d-870e-c052d5cb859e" class="bulleted-list"><li style="list-style-type:disc">Ivan’s main weapon is an Antique Spanish pistol. this pistol came from the original cult-leader, when his brother dropped it after being taken by Nehmen</li></ul><ul id="909d8975-1a48-4a8b-b853-b7ba8cd2817d" class="bulleted-list"><li style="list-style-type:disc">He has a cat that he feeds every day, but ends up loses interest/forgetting to feed the cat, causing it to disappear eventually. </li></ul><ul id="0099bc70-2413-4faa-ba7d-e39fcda2365d" class="bulleted-list"><li style="list-style-type:disc">Hanging out with josh, sees a guy harassing woman, they decide to step on but Ivan takes it too far and beats the hell out of the guy. Gameplay, you keep pressing a button to beat up the guy and you can’t stop till he’s hurt<ul id="196fe83c-8406-801b-83cb-e665798d0832" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-default_background"> Ivan has a sister that has been sexually assaulted before and so that’s also part of the reason Ivan beats the living shit out of the dude.</mark></li></ul></li></ul><ul id="7a1d3ab6-72a6-48a9-a192-256c456eca49" class="bulleted-list"><li style="list-style-type:disc">Freshmen can’t bring their cars, Ivan takes rides from other people</li></ul><ul id="196fe83c-8406-80ba-ad40-c0feb5a802ca" class="bulleted-list"><li style="list-style-type:disc">Ivan makes sure to call his mom often, but over time he stops calling. This causes his mom to start calling the player. Ivan is an unreliable narrator by this time, so his options seem normal, but he is really just lashing out.</li></ul><ul id="2dc106cb-9330-48da-9f25-f1cacee66508" class="bulleted-list"><li style="list-style-type:disc">By the end of the game, he has lost all morals and acts at random.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Christiano <strong>Ligero </strong>(Cult Leader)</summary><div class="indented"><p id="188fe83c-8406-815a-ac46-e4f5fca132b7" class="">The cult leader is the reason is the reason why all the souls are lingering on campus. He started the Nehmen Cult and his followers sacrificed themselves along with the Natives so that their souls could linger and wait for Nehmen to take them.</p><ul id="188fe83c-8406-8150-b89d-fc5836ca63e7" class="bulleted-list"><li style="list-style-type:disc">Before becoming a cult-leader, he was a bishop at his church in Spain</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Bellon Ligero (Cult Leader Brother)</summary><div class="indented"><ul id="188fe83c-8406-814d-9530-facef77c38f1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">Soldier</mark></li></ul><ul id="188fe83c-8406-817c-b0ef-c084ef6b2e6e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">Not Religious at all, him and his brother feud over it.</mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Bill (Billy) Echoille(Old Janitor)</summary><div class="indented"><p id="188fe83c-8406-812c-baf4-c2babe38a795" class="">A man of the Catholic faith. He’s been on campus over the summer. Meaning he’s felt Nehmen’s influence longer than anyone else. </p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Beatrice Palmer (The Dean of SSU)</summary><div class="indented"><p id="188fe83c-8406-8166-927b-c743475d2a0e" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Camila Cordero (The Councilor)</summary><div class="indented"><ul id="188fe83c-8406-81b0-b992-fd993fe7ace7" class="bulleted-list"><li style="list-style-type:disc">The Councilor acts as a tutorial in the beginning of the game</li></ul><p id="188fe83c-8406-8134-b438-ec9df3c99166" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Josh (BFF)</strong></summary><div class="indented"><p id="68ce3134-4ded-403b-b94c-cab54abe0ddf" class="">Josh begins as a character with very weak morals. He doesn’t care about much including school. He tries to keep to himself and doesn’t concern himself in external affairs. He ends up acting as a grounding character because he isn’t affected as much. </p><p id="196fe83c-8406-80dc-abd5-c84b016f0f52" class="">Josh becomes Ivan’s best friend. He rarely is on campus. This is because he lives off campus and takes classes all on one or two days. He is majoring in Interdisciplinary social sciences with concentrations in international relations and mass communications.</p><p id="a2694006-d62e-4b9e-b47e-09d225a3b723" class="">Josh and Ivan hang out a lot and play arcade games on campus. The arcade games act as the tutorial and strengthen their friendship 💌 They also study and watch movies together. They also trespass, specifically at the abandoned trucking building, and mess with alligators.</p><p id="6419b1e5-cccc-494a-bda5-1cb65ccb0e0f" class="">A large part of Josh and Ivan’s friendship is a skateboard they will work to build and create throughout the game. The impact on gameplay will be in that the player can use this as a means of transportation after it is complete. This also gives incentive for the player to build a relationship with Josh.</p><p id="e6c69cc4-c435-477d-861f-1cd4595784fd" class="">By the end of the game and after seeing everything on campus, he feels like he has to act. Not only to keep the school from going to chaos, but to keep his best friend under control.</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Gabriella </strong></summary><div class="indented"><p id="e748d9e8-f084-4dea-99a7-2bb9cb20a145" class="">Gabriella is a nice, outgoing sorority girl in Nu Epsilon Mu (NepMu). She joins after week 3. She comes from an upper middle class family and is majoring in biochemistry on a pre-medicine track. Her parents are alumni of the school which is why she ended up coming to the school.</p><p id="434bdd3a-a302-44f8-8c5b-542b7af6a761" class="">She is a big music fan with her favorite genre being electronic pop. </p><p id="712393e1-002f-4e2b-86e2-e2be4f6fbc0b" class="">She meets Ivan at orientation and bumps into him again at a punk show at the abandoned trucking company. </p><p id="41965bc5-e7b1-401e-b1dc-f87843c1e6a9" class="">Eventually, she gets assaulted by one of the frat guys in Gamma Epsilon Tau. </p></div></details><h1 id="188fe83c-8406-815b-82f4-cf863edcec73" class=""><mark class="highlight-yellow">Plot Devices</mark></h1><hr id="188fe83c-8406-8177-8245-e4cd48f7cc7b"/><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">The Human Soul</summary><div class="indented"><p id="188fe83c-8406-81d5-ae5d-fe4ba65ad578" class="">The soul makes up a person’s empathy and morality. When Nehmen breaks down a person’s soul, they lose their morality.</p><ul id="188fe83c-8406-8120-865a-d44dac3a0c9d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default_background">People with strong morals have solid shaped souls, people with weak morals have more dispersed and weak souls. Nehmen’s passive effect on people turns their souls weak and dispersed. This is a natural function of his body and it’s purpose is to make each soul cling to his body better.</mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">The Cult-Leader’s Gun</summary><div class="indented"><p id="188fe83c-8406-816a-b715-c2ae6e9f5d3b" class="">On the day that the Spanish Cult-Leader learned about Nehmen, it was because while he and his brother were speaking, Nehmen passed through their home. The cult-leader’s brother used his pistol to shoot at Nehmen, but Nehmen simply passed through him, killing him instantly. Since Nehmen passed through the gun, it was fused with his brother’s soul and it gave it special properties allowing it to shoot through souls and kill ghosts.</p></div></details><h1 id="188fe83c-8406-81e1-8255-c76b773d3399" class=""><mark class="highlight-yellow">Story (Lore)</mark></h1><hr id="188fe83c-8406-8150-aa22-d6237f4b3f54"/><p id="188fe83c-8406-81da-b7c3-f4716adf0ec2" class=""><em>Marked by year &gt; month. Bullet Points are in Chronological Order.</em></p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Reference</summary><div class="indented"><h2 id="188fe83c-8406-812a-899b-db4581f044aa" class=""><em><mark class="highlight-default">Lore</mark></em></h2><p id="188fe83c-8406-8112-a9b2-e0cfaaf1a6e0" class=""><mark class="highlight-default">In the year 1550, a Spanish man begins to have recurring dreams of a colossal deity named Nehmen.  One day he witnessed Nehmen kill his brother, and Nehmen drove his soul mad, prompting him to start a cult. He gains a following within Spain and is eventually excommunicated by the catholic church. With nowhere else to go, he and his followers flee to the Florida Everglades. While in Florida, his followers start to get the dreams as well. Slowly, their minds get corrupted and they get more violent. The dreams tell them that on  the final day, they should all sacrifice themselves to Nehmen, and that he would take them to paradise. In a twisted justification, they decide to “enlighten” the nearby Seminole tribe as well, leading to a bloody battle, that the Spaniards came out on top of. Just before the final day, the remaining Spaniards drag the bodies to a cave and seal themselves to rote.</mark></p><h2 id="188fe83c-8406-81bd-99b9-c8e6f4ea3e7b" class=""><em><mark class="highlight-default">Plot</mark></em></h2><h3 id="188fe83c-8406-818a-a8f9-de54e8f85bd3" class=""><mark class="highlight-default"><span style="border-bottom:0.05em solid">Introduction</span></mark></h3><p id="188fe83c-8406-81c6-a5ff-ec18dd7163c6" class=""><mark class="highlight-default">When Ivan transfers to</mark><mark class="highlight-default"><mark class="highlight-default_background"> Southern Seminole University</mark></mark><mark class="highlight-default"> partway through the fall semester, things seem weird. The air smells metallic, cries of war echo in the halls. The strangest part; no one seems to think anything of it. During his first week, a senior janitor is inexplicably found dead. He witnesses the aftermath and despite the horrific scene, the death is ruled a suicide</mark><mark class="highlight-default"><mark class="highlight-default_background">. Ivan being a journalist, he decides to investigate further. He learns that over the past few months, people at the university have become more aggressive and violent. It seems like the janitor died of something he was exposed to. Something the rest of the students still currently being exposed to.</mark></mark></p><h3 id="188fe83c-8406-815a-8fa0-c1214e44fb23" class=""><mark class="highlight-default"><span style="border-bottom:0.05em solid">Final Scene</span></mark></h3><p id="188fe83c-8406-8172-a819-d4dc55861b25" class=""><mark class="highlight-default"><mark class="highlight-default_background">Nehmen takes Ivan’s soul along with the rest of the college. Millions of years pass while they are dragged through space, eventually their souls are rubbed off, one by one, where they are reborn into new bodies, like pollen spread to a new flower by a bee.</mark></mark></p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1548</summary><div class="indented"><h2 id="188fe83c-8406-8165-b2c4-f5dfc5f70a55" class=""><span style="border-bottom:0.05em solid">January</span></h2><div id="188fe83c-8406-81cc-9076-e31d60ddb051" class="collection-content"><h4 class="collection-title">CB’s first impression of Nehmen</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock-alternate_gray.svg" style="width:14px;height:14px;display:block"/></span>Order</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Specifics</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/thought_gray.svg" style="width:14px;height:14px;display:block"/></span>CL&#x27;s Thoughts</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/thought_gray.svg" style="width:14px;height:14px;display:block"/></span>CLB&#x27;s Thoughts</th></tr></thead><tbody><tr id="188fe83c-8406-81c3-8622-f96a642019e7"><td class="cell-title"><a href="https://www.notion.so/1-188fe83c840681c38622f96a642019e7?pvs=21">1</a></td><td class="cell-qgn:">CL and CLB are hanging out</td><td class="cell-|H&lt;p"></td><td class="cell-ARw{"></td></tr><tr id="188fe83c-8406-81c1-852b-f4274b31416d"><td class="cell-title"><a href="https://www.notion.so/2-188fe83c840681c1852bf4274b31416d?pvs=21">2</a></td><td class="cell-qgn:">Nehmen enters the room</td><td class="cell-|H&lt;p">CL thinks it’s an angel. He’s scared but wants to compose himself.</td><td class="cell-ARw{">CLB sees Nehmen and is terrified. He has no idea what it is and wants to protect himself and his brother.</td></tr><tr id="188fe83c-8406-8176-8d26-d86486ec4e89"><td class="cell-title"><a href="https://www.notion.so/3-188fe83c840681768d26d86486ec4e89?pvs=21">3</a></td><td class="cell-qgn:">CLB shoots at Nehmen with his revolver</td><td class="cell-|H&lt;p">CL is now utterly terrified because he doesn’t know what Nehmen will do. He’s also really upset with his brother for shooting an angel.</td><td class="cell-ARw{"></td></tr><tr id="188fe83c-8406-8130-882a-de13706253eb"><td class="cell-title"><a href="https://www.notion.so/4-188fe83c84068130882ade13706253eb?pvs=21">4</a></td><td class="cell-qgn:">Nehmen drifts through CLB, killing him</td><td class="cell-|H&lt;p">He’s traumatized and wonders why an angel would kill his brother. He doesn’t know if it was a repercussion for his brother shooting him, or if maybe the angel had come to take his soul to heaven.</td><td class="cell-ARw{">CLB is now experiencing lots of pain since his soul is ripped from his body.</td></tr><tr id="188fe83c-8406-81f7-a001-ff84df80f4e6"><td class="cell-title"><a href="https://www.notion.so/5-188fe83c840681f7a001ff84df80f4e6?pvs=21">5</a></td><td class="cell-qgn:">Nehmen also drifts through CLB’s Pistol. A piece of CLB’s soul gets stuck to the pistol, giving it powers.</td><td class="cell-|H&lt;p"></td><td class="cell-ARw{"></td></tr><tr id="188fe83c-8406-81f8-854c-e8eeb5d8e4d6"><td class="cell-title"><a href="https://www.notion.so/6-188fe83c840681f8854ce8eeb5d8e4d6?pvs=21">6</a></td><td class="cell-qgn:">CL drops to his knees and prays</td><td class="cell-|H&lt;p">Knowing nothing else to do, he drops to his knees and starts reciting prayer. He’s hoping that Nehmen will take his soul too so he can go to heaven.</td><td class="cell-ARw{"></td></tr></tbody></table><br/><br/></div><h2 id="188fe83c-8406-8188-af17-c9e57a4db4ea" class=""><span style="border-bottom:0.05em solid">February - August</span></h2><ul id="188fe83c-8406-817d-a9bf-e4c59369876b" class="bulleted-list"><li style="list-style-type:disc">CL reflects on his brother’s death. He decides that Nehmen came that day to take his brother’s soul to paradise. He concluded that Nehmen wanted him to watch his brother’s death so that he can spread the word to as many people as possible, and so that people are prepared to offer themselves for when Nehmen returns.</li></ul><ul id="188fe83c-8406-8198-9f58-f30511fb2e43" class="bulleted-list"><li style="list-style-type:disc">CL starts sharing his experience, eventually he convinces people that he was a prophet, chosen by Nehmen to share his message. </li></ul><ul id="188fe83c-8406-8190-b91e-e06ddcb15ac3" class="bulleted-list"><li style="list-style-type:disc">His following grows larger and larger as they meet after-hours at the church to talk about Nehmen. </li></ul><h2 id="188fe83c-8406-8107-b969-dbca2d9acc87" class=""><span style="border-bottom:0.05em solid">September</span></h2><ul id="188fe83c-8406-8112-906a-eb2631da2f03" class="bulleted-list"><li style="list-style-type:disc">One of the higher-up members of the church decides to attend one of CL’s meetings and declares it heresy.</li></ul><ul id="188fe83c-8406-8155-a87b-cf076f482b64" class="bulleted-list"><li style="list-style-type:disc">The higher up member is outraged and wants to get CL and his followers executed.</li></ul><ul id="188fe83c-8406-81a8-acbc-d46bea9cabfb" class="bulleted-list"><li style="list-style-type:disc">CL and his followers steal a boat and flee to the Florida Everglades.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1550</summary><div class="indented"><ul id="188fe83c-8406-8168-8512-f5f48a86926b" class="bulleted-list"><li style="list-style-type:disc">CL and his cult have built a town and continued to feed into each other’s delusions. </li></ul><ul id="188fe83c-8406-819d-9978-f533ce2b09aa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">They become friends with a nearby Seminole tribe since they bond over their religious persecution.</mark></li></ul><ul id="188fe83c-8406-81a7-9780-c427bc8ffa9a" class="bulleted-list"><li style="list-style-type:disc">CL tells everyone that Nehmen is going to come back for them and they need to prepare their souls for him by sacrificing themselves.</li></ul><ul id="188fe83c-8406-8143-a54f-ef5161707400" class="bulleted-list"><li style="list-style-type:disc">The cult decides to do the neighboring Seminole tribe a favor by forcibly sacrificing them all at once so that their souls can be taken by Nehmen. Since everyone was killed in a ritualistic way and their bodies were sealed off. Their souls remained in wait for Nehmen to come take them.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">1921</summary><div class="indented"><ul id="188fe83c-8406-8114-8759-eb11915fb0bd" class="bulleted-list"><li style="list-style-type:disc">SSU is founded on top of the land where the Nehmen cult massacre occurred.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2005: Spring Semester</summary><div class="indented"><ul id="188fe83c-8406-81ae-a8ff-fc6b0a849796" class="bulleted-list"><li style="list-style-type:disc">Ivan is attending a prestigious and very expensive college where he majors in his passion, journalism. Ivan’s parents know he loves it but they can barely afford it.</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">2005: Summer</summary><div class="indented"><ul id="188fe83c-8406-8110-80b6-ecb1440e4e95" class="bulleted-list"><li style="list-style-type:disc">At the beginning of summer, a construction project starts on campus. Unknowingly after drilling through a rock wall, construction workers stumble upon the corpses of the 1550 Nehmen massacre. This releases the souls of both the Cultist Spaniards and the Native American victims onto campus. At this point, the large clustering of souls that are unwilling to pass on alerts Nehmen, where he sets off on the months long voyage to come collect their souls.</li></ul><ul id="188fe83c-8406-81f5-be01-e6cf7503fc60" class="bulleted-list"><li style="list-style-type:disc">Nehmen’s powers start to influence the Old Janitor, the Dean, as well as some other Faculty.</li></ul><ul id="188fe83c-8406-8145-b82c-e9aff317a2cc" class="bulleted-list"><li style="list-style-type:disc">One week before the start of the fall semester: The Dean of SSU, in an effort to get as many students to the college so their souls can be taken by Nehmen, sends Ivan a full-ride scholarship offer. Ivan doesn’t bother considering it since he loves his current university, but his parents choose to send him there anyways since it saves them lots of money.</li></ul></div></details><h1 id="188fe83c-8406-8159-9a8c-cc9fcb7d0e62" class=""><mark class="highlight-yellow">Story (2009: Spring Semester)</mark></h1><hr id="188fe83c-8406-81f5-a9bc-f59461cd24d7"/><p id="188fe83c-8406-81fe-a976-f412744c059f" class=""><em>Marked by week &gt; day. Bullet Points are in Chronological Order.</em></p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Week -2</summary><div class="indented"><p id="1a4fe83c-8406-806b-8e2a-c61d7f3fb205" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Week 1</summary><div class="indented"><h3 id="1a4fe83c-8406-8011-badb-d5045aaaf020" class="">Sunday</h3><ul id="1a4fe83c-8406-80b5-9fad-edfad04ae93f" class="bulleted-list"><li style="list-style-type:disc">Move in - Opening scene</li></ul><ul id="1a4fe83c-8406-803b-abe7-e7f57880d5d9" class="bulleted-list"><li style="list-style-type:disc">Meet roommate - Bernard: Comp Sci - Always has shoes on the bed</li></ul><ul id="1a4fe83c-8406-80e0-992f-ca8af800355d" class="bulleted-list"><li style="list-style-type:disc">Hi… make sure your stuff doesn’t get on my side</li></ul><ul id="1a4fe83c-8406-80fa-9fc4-e89a03f364fb" class="bulleted-list"><li style="list-style-type:disc">Room:<ul id="1a4fe83c-8406-80f0-aead-f2056d7b2ce2" class="bulleted-list"><li style="list-style-type:circle">Left side:<ul id="1a4fe83c-8406-803d-a0fa-e8c69866d274" class="bulleted-list"><li style="list-style-type:square">computer</li></ul><ul id="1a4fe83c-8406-8005-b6ef-eae38b68c341" class="bulleted-list"><li style="list-style-type:square">bed dungeon setup - no sheets yet</li></ul><ul id="1a4fe83c-8406-8089-9f6d-c53a9f7966c5" class="bulleted-list"><li style="list-style-type:square">big pile of clothes</li></ul><ul id="1a4fe83c-8406-804a-9e64-f98f7d7c5fe4" class="bulleted-list"><li style="list-style-type:square">invents new pokemon - drawings on walls</li></ul><ul id="1a4fe83c-8406-8099-80b6-c5a528a6f5e8" class="bulleted-list"><li style="list-style-type:square">Pokemon black and white poster on the wall</li></ul><ul id="1a4fe83c-8406-807a-a170-fc92ea4963e6" class="bulleted-list"><li style="list-style-type:square">Always playing on that DSI<ul id="1a4fe83c-8406-8037-a776-ffa79b1cbb76" class="bulleted-list"><li style="list-style-type:disc">Gamefly packages in the mail</li></ul></li></ul></li></ul></li></ul><h3 id="1a4fe83c-8406-8072-a152-d63da7544312" class="">Monday</h3><h3 id="1a4fe83c-8406-8026-a71f-e69beeb6d006" class="">Tuesday</h3><h3 id="1a4fe83c-8406-80e6-9343-f7ec993d821e" class="">Wednesday</h3><h3 id="1a4fe83c-8406-8058-9616-dbc81229e59f" class="">Thursday</h3><h3 id="1a4fe83c-8406-80c1-b354-fe94fcae9338" class="">Friday</h3><p id="196fe83c-8406-806f-853a-dfe94ec3ca74" class="">
+</p></div></details><h1 id="188fe83c-8406-818f-b478-e0bc4294b742" class=""><mark class="highlight-yellow">Ideas</mark></h1><hr id="188fe83c-8406-8198-94ac-d7e58da84286"/><p id="188fe83c-8406-8126-b394-e7996446f1f9" class=""><em>Ideas </em><em><mark class="highlight-yellow_background">to be discussed</mark></em><em><mark class="highlight-default_background"> are highlighted</mark></em><em> in yellow, </em><em><mark class="highlight-red_background">scrapped ideas</mark></em><em> are highlighted in red, ideas </em><em><mark class="highlight-teal_background">to be implemented</mark></em><em>  into the document are highlighted in green, and ideas to </em><em><mark class="highlight-blue_background">keep in mind</mark></em><em> are highlighted in blue.</em></p><ul id="188fe83c-8406-8184-b852-cf343fd81e4e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">If the antique gun has the power to shoot through souls, that means if you shot a living person with it, it would kill their soul along with their body. This could be used in the story to “mercy kill” someone before their soul is taken by Nehmen.</mark></li></ul><ul id="188fe83c-8406-811b-91ff-e0fa1f7b7326" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Delivery driver who can recognize the difference in the college over time</mark></li></ul><ul id="188fe83c-8406-8120-88ba-fbd6de94453c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">Audio Compression for Voice Actors (Low Sample Rate and Bit Depth)</mark></li></ul><ul id="188fe83c-8406-81f7-bb97-dd7b4ef8c623" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background">The game and its characters are not self aware and self-serious</mark></li></ul><ul id="188fe83c-8406-81b4-a08c-dd9af3f2b5b5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">The player sees images of Nehmen in daily life and during stressful situations</mark></li></ul><ul id="188fe83c-8406-817a-8f23-f013c2e33207" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">The Dean and School Board, due to Nehmen’s influence, are no longer interested in making the school profit. They just want to bring as many sacrifices as possible, so they spend the whole school budget hiring new faculty and offering scholarships to students like Ivan.</mark></li></ul><ul id="188fe83c-8406-816f-a2bc-e4914d1c3f6e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Ivan is taking stats, english comp, us gov, journalism</mark></li></ul><ul id="188fe83c-8406-812b-8402-e394520f2b5f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">In class the teacher calls on you and eventually students and teachers get worse and worse</mark></li></ul><ul id="188fe83c-8406-811d-8a04-d6afc5a07f07" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Sometime during the semseter a violent act happens which cancels class for a short amount of time. after that, the campus is way worse than it used to be</mark></li></ul><ul id="188fe83c-8406-81ce-9831-c33fa1ef54f4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Janitor Kills himself. Ivan investigates his closet and finds mail with his address along with the Nehmen Cross</mark></li></ul><ul id="188fe83c-8406-81bb-ae56-e54082432ed0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Ivan goes to apartment to investigate after the editor of the newspaper encourages him. Meets his room mate which send him to an investigation on the cult</mark></li></ul><ul id="188fe83c-8406-8103-be28-d3a0d3e5a3a2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Nehmen’s represented by yellow blue because that’s the colors he appears as.</mark></li></ul><ul id="188fe83c-8406-8190-96e7-c12960742aee" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Nehmen’s max size is the ISA building so he doesn’t affect the whole earth just the direction he’s going </mark></li></ul><ul id="188fe83c-8406-817b-a316-fffdcab0fe9f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">SSU is a public college</mark></li></ul><ul id="188fe83c-8406-81fa-a001-f39207590977" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Moth metaphors throughout the game. Maybe as Ivan kills the lingering souls in the game, a physical light somewhere on campus gets dimmer and dimmer. This shows that Nehmen’s attention towards SSU lowers as the lingering souls disappear. Part of the schools insignia is a lamp post which represents “we always shine bright” or something like that. there can be a lamp post on campus that goes out</mark></li></ul><ul id="188fe83c-8406-8193-8872-e0a5aec13ee2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">After the massacre, a Native American who survived moved everyone to the cave where their souls remained. That same Native American went on to own the land where the massacre happened, which was sold by his grandchildren generations later to the university so that it could be build. Throughout that time, the grandchildren collected different relics including the pistol. The Janitor is related to that Native American and inherited their house, their pistol and the rest of the relics. This is how Ivan finds the pistol when he goes to investigate</mark></li></ul><ul id="188fe83c-8406-81dc-bc60-ddba68f03f3a" class="block-color-teal bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default"><mark class="highlight-teal_background">Archeology museum on campus is called the Echoille  museum after the janitors family.</mark></mark></li></ul><ul id="188fe83c-8406-81a0-a9f2-f3a9f8a9d5a9" class="bulleted-list"><li style="list-style-type:disc">Game takes place during the winter semester</li></ul><ul id="188fe83c-8406-81b7-b6d0-ea8795e153a6" class="bulleted-list"><li style="list-style-type:disc">Characters with more moral character are drawn with more rigid clear design compared to ones that are not. especially the ones under Nehmen’s influence</li></ul><ul id="188fe83c-8406-81e8-a5b3-d3c6dff0d41d" class="bulleted-list"><li style="list-style-type:disc">When people’s souls get more broken down, they need less reasoning behind their actions, meaning they’ll take actions that aren’t necessarily apart of their moral compass.</li></ul><ul id="188fe83c-8406-81b4-95e3-f431e6fc0adb" class="bulleted-list"><li style="list-style-type:disc">Dialogue options, over time, you get fewer and fewer “normal” options</li></ul><ul id="188fe83c-8406-816d-b55b-d9850afe06da" class="bulleted-list"><li style="list-style-type:disc">Game is set up like a point and click RPG. Half the gameplay is walking around, the other half is in the battle sequence</li></ul><ul id="baaba7bf-a912-4867-b337-f8e3db95aadc" class="bulleted-list"><li style="list-style-type:disc">Freshmen can’t bring their cars, Ivan takes rides from other places</li></ul><ul id="196fe83c-8406-80d5-9fdc-efab3b4dbad3" class="bulleted-list"><li style="list-style-type:disc">Overlap between end of fall classes &amp; beginning of winter</li></ul><ul id="19dfe83c-8406-808c-be6a-fc81b4c45001" class="bulleted-list"><li style="list-style-type:disc">Game mechanics? - Player is allowed to do whatever they want during certain classes/parts of the game whereas if plot needs to develop, the player is forced to certain places</li></ul><h2 id="4453dfee-d85c-4366-ac2a-3344cddc3cd7" class="">Chapter 1- Inevitability</h2><h3 id="dd7ca5fe-b548-4de8-abec-a81eeb5c3690" class="">Goals</h3><p id="76bdcaa1-4fd4-48b6-a3a5-78ffe9e35ba8" class="">Inevitability/no matter what you do, the same stuff happens</p><ul id="196fe83c-8406-80e8-a088-e488c4b565ad" class="bulleted-list"><li style="list-style-type:disc">Just moved here from his dream college, kinda pissed off</li></ul><ul id="196fe83c-8406-801b-bed8-caf36002c898" class="bulleted-list"><li style="list-style-type:disc">He thinks he will get a job because he’s good at it and doesn’t care to do anything more.</li></ul><ul id="196fe83c-8406-8066-a002-ee3d26c8f7de" class="bulleted-list"><li style="list-style-type:disc">Ivan comes to school working in journalism because he is good at it, but not necessarily because he wants to make a change. As he sees the fucked-upness of the school, he starts to see how his work can make a change. Eventually, seeing how much he can make a change gives him this feeling that he has to stay to keep doing that which leads to his possible downfall. </li></ul><ul id="196fe83c-8406-8097-9ed8-ca10f650dba5" class="bulleted-list"><li style="list-style-type:disc">Establish a catalyst that makes Ivan want to change. </li></ul><h3 id="623e01f5-9f9c-460c-8c4f-700d595b5366" class="">Events</h3><ol type="1" id="196fe83c-8406-80b5-bd7e-eae5d38436ef" class="numbered-list" start="1"><li>Orientation</li></ol><ol type="1" id="196fe83c-8406-807a-a396-c59baf29c8d4" class="numbered-list" start="2"><li>Move-in<ol type="a" id="196fe83c-8406-806c-8d30-eeb3335c6797" class="numbered-list" start="1"><li>Ivan decorates his room out of wanting to make it look nice rather than love for it. </li></ol><ol type="a" id="70660dc3-4bea-4d2e-8729-d970851efb47" class="numbered-list" start="2"><li>Ivan likes things for aesthetic reasons, rather than actually liking them</li></ol></li></ol><ol type="1" id="196fe83c-8406-8073-994a-fb74bbaeb912" class="numbered-list" start="3"><li>First day of class - (<mark class="highlight-default_background">stats, english comp, us gov, journalism)</mark><ol type="a" id="196fe83c-8406-80c4-ba4c-c1b2f45732ef" class="numbered-list" start="1"><li>Journalism teacher says that he can tell which people are going to do well and which people are not going to make it just by looking at them.</li></ol><ol type="a" id="196fe83c-8406-80e6-b98b-dd7d36c5eb57" class="numbered-list" start="2"><li>Ivan thinks he will definitely make it simply based on skill.</li></ol></li></ol><ol type="1" id="196fe83c-8406-80a3-924a-c542109d4423" class="numbered-list" start="4"><li>Meeting Josh</li></ol><ol type="1" id="196fe83c-8406-809f-83dc-f63648d117da" class="numbered-list" start="5"><li>Ivan makes friends with the Janitor (of the library)<ol type="a" id="196fe83c-8406-80b8-95ff-c9b4b0c40f3d" class="numbered-list" start="1"><li>This happens over the course of the first week. Ivan is working on scholarship application/journalism club for his previous university. </li></ol><ol type="a" id="196fe83c-8406-8022-ab10-c04e308dbcdb" class="numbered-list" start="2"><li>At first, he just waves to the janitor. Ivan sits in the same spot every day, so the janitor gets to know him.</li></ol><ol type="a" id="196fe83c-8406-805a-93b7-de4543eb5f09" class="numbered-list" start="3"><li>Ivan wants to open a window, janitor says they aren’t allowed to unlock them.</li></ol><ol type="a" id="196fe83c-8406-8026-b4ee-e9e5465d1475" class="numbered-list" start="4"><li>Janitor was about to retire/move out and is really excited to do so</li></ol><ol type="a" id="196fe83c-8406-80eb-bfb8-e01def802b70" class="numbered-list" start="5"><li>Ivan brought some empanadas for the janitor the day of his death. </li></ol></li></ol><ol type="1" id="196fe83c-8406-80df-a495-c66202bb1045" class="numbered-list" start="6"><li>Janitor dies<ol type="a" id="196fe83c-8406-80e3-a61e-e14427edd4d3" class="numbered-list" start="1"><li>Ivan goes to the library and sees the blinds moving. He sees that the window is open. He looks out the window and sees the body on the ground. </li></ol></li></ol><p id="1a4fe83c-8406-809a-a425-c25675e3c07a" class="">
+</p><h1 id="188fe83c-8406-817b-af56-ccab13192626" class=""><mark class="highlight-yellow">To Do</mark></h1><div id="188fe83c-8406-81ba-a895-d2d8d6ece38e" class="collection-content"><h4 class="collection-title">Tasks</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Assign</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>Status</th></tr></thead><tbody><tr id="188fe83c-8406-8112-9df7-c5bbc94d6b57"><td class="cell-title"><a href="https://www.notion.so/Design-Main-Character-and-Backstory-188fe83c840681129df7c5bbc94d6b57?pvs=21">Design Main Character and Backstory</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr id="188fe83c-8406-8111-971b-c68484599077"><td class="cell-title"><a href="https://www.notion.so/Decide-character-motivations-for-transferring-to-SSU-188fe83c84068111971bc68484599077?pvs=21">Decide character motivations for transferring to SSU</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr id="188fe83c-8406-81b0-a1d5-dfb1233135e5"><td class="cell-title"><a href="https://www.notion.so/Decide-what-makes-main-character-special-from-other-characters-188fe83c840681b0a1d5dfb1233135e5?pvs=21">Decide what makes main character special from other characters</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr id="188fe83c-8406-8188-a276-c660d621b48e"><td class="cell-title"><a href="https://www.notion.so/Flesh-out-lore-characters-Cult-leader-his-brother-and-any-other-potential-characters-188fe83c84068188a276c660d621b48e?pvs=21">Flesh out lore characters - (Cult leader, his brother, and any other potential characters)</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value select-value-color-green"><div class="status-dot status-dot-color-green"></div>Done</span></td></tr><tr id="188fe83c-8406-818c-af33-e6b655d6bca1"><td class="cell-title"><a href="https://www.notion.so/Flesh-out-setting-Campus-Map-188fe83c8406818caf33e6b655d6bca1?pvs=21">Flesh out setting - (Campus Map)</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>In progress</span></td></tr><tr id="188fe83c-8406-8174-9b5d-f820fad4c72a"><td class="cell-title"><a href="https://www.notion.so/Create-Hypothetical-Scenarios-Test-bounds-of-our-story-constraints-188fe83c840681749b5df820fad4c72a?pvs=21">Create Hypothetical Scenarios - (Test bounds of our story constraints)</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value"><div class="status-dot"></div>Not started</span></td></tr><tr id="188fe83c-8406-8127-9f7e-cab685381798"><td class="cell-title"><a href="https://www.notion.so/Create-Characters-based-on-Hypotheticals-and-Setting-188fe83c840681279f7ecab685381798?pvs=21">Create Characters based on Hypotheticals and Setting</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value"><div class="status-dot"></div>Not started</span></td></tr><tr id="188fe83c-8406-810e-a8d0-d693fee01c82"><td class="cell-title"><a href="https://www.notion.so/Write-Gameplay-Story-Overview-188fe83c8406810ea8d0d693fee01c82?pvs=21">Write Gameplay Story Overview</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value"><div class="status-dot"></div>Not started</span></td></tr><tr id="188fe83c-8406-8169-aa10-dd68339c6bdd"><td class="cell-title"><a href="https://www.notion.so/Keep-Discussing-Hypotheticals-188fe83c84068169aa10dd68339c6bdd?pvs=21">Keep Discussing Hypotheticals</a></td><td class="cell-yAIZ"></td><td class="cell-C|`a"><span class="status-value"><div class="status-dot"></div>Not started</span></td></tr></tbody></table><br/><br/></div><p id="188fe83c-8406-812c-a555-cdff317d7f8e" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
